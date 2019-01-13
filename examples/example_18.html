@@ -77,7 +77,7 @@ In some cases it might be necessary to generate a <em>push-model</em> lexer
 that stops when it runs out of input and returns control to the outer program.
 Later, when the outer program obtains more input, it resumes lexer and continues lexing from the point where it stopped.</p>
 <p>In order to function in this manner lexer must be able to store its inner state before returning to the caller.
-This can be done with re2c <code class="docutils literal"><span class="pre">-f</span></code> <code class="docutils literal"><span class="pre">--storable-state</span></code> option <a class="reference external" href="/manual/featires/state/state.html">described here</a>.
+This can be done with re2c <code class="docutils literal"><span class="pre">-f</span></code> <code class="docutils literal"><span class="pre">--storable-state</span></code> option <a class="reference external" href="/manual/features/state/state.html">described here</a>.
 The example below reads chunks of input from <code class="docutils literal"><span class="pre">stdin</span></code> and counts the number of words in it.
 Note that the parsing loop is located in the <code class="docutils literal"><span class="pre">main</span></code> function,
 and <code class="docutils literal"><span class="pre">YYFILL</span></code> merely returns instead of refilling buffer.
@@ -279,7 +279,7 @@ If the directive is omitted, re2c emits state dispatch right before lexer start
 </pre></div>
 </td></tr></table></div>
 <p>Compile:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ re2c --input custom -o push_model.cc push_model.re
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ re2c --storable-state -o push_model.cc push_model.re
 $ g++ -o push_model push_model.cc
 </pre></div>
 </div>
@@ -298,7 +298,7 @@ word count: <span class="m">5</span>
       <div class="clearer"></div>
     </div>
     <div class="footer" role="contentinfo">
-      Last updated on Nov 28, 2018.
+      Last updated on Jan 13, 2019.
     </div>
   </body>
 </html>
